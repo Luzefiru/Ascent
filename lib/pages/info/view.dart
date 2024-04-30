@@ -30,7 +30,7 @@ class InfoPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Image.network(
-                  "https://avatars.githubusercontent.com/u/70209532",
+                  "https://0.gravatar.com/avatar/3915902215ca977d6e1e82f82540cf1aab004717f087e996cb5ffaab43a8c681?size=1024",
                   fit: BoxFit.cover,
                 ),
               ),

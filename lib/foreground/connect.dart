@@ -3,6 +3,7 @@ import 'dart:isolate';
 
 import 'package:ascent/native/api.dart' as api;
 import 'package:ascent/global_state.dart';
+import 'package:ascent/native/frb_generated.dart';
 import 'package:ascent/pages/connect/logic.dart';
 import 'package:bruno/bruno.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -80,6 +81,7 @@ class ConnectTaskHandler extends TaskHandler {
       notificationText: tr('connect.notification_description.waiting'),
     );
 
+    await RustLib.init();
     String errorMessage = "";
     api
         .doConnect(port: port, dataFolder: GlobalState.dataDir.path)

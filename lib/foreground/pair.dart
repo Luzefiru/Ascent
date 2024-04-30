@@ -3,6 +3,7 @@ import 'dart:isolate';
 
 import 'package:ascent/native/api.dart' as api;
 import 'package:ascent/global_state.dart';
+import 'package:ascent/native/frb_generated.dart';
 import 'package:bruno/bruno.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -87,6 +88,7 @@ class PairTaskHandler extends TaskHandler {
   }
 
   Future<void> doPair() async {
+    await RustLib.init();
     String errorMessage = "";
     api
         .doPair(port: port, code: code, dataFolder: GlobalState.dataDir.path)
