@@ -5,3 +5,4 @@ build/
 .dart_tool/
 rust_builder
 logs
+android/key.properties
