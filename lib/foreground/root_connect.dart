@@ -55,7 +55,7 @@ class RootConnectTaskHandler extends TaskHandler {
     while (link.isEmpty) {
       String? data = await Root.exec(
           cmd:
-              "logcat -d | grep -E 'https://(webstatic|hk4e-api|webstatic-sea|hk4e-api-os|api-takumi|api-os-takumi|gs).(mihoyo\\.com|hoyoverse\\.com)' | grep -i 'gacha' | tail -n 1");
+              "logcat -d | grep -E 'https://(webstatic|hk4e-api|webstatic-sea|hk4e-api-os|api-takumi|api-os-takumi|gs|aki-gm-resources-oversea).(mihoyo\\.com|hoyoverse\\.com|aki-game\\.net|aki-game\\.com)' | grep -i 'gacha' | tail -n 1");
       if (data != null) {
         link = data;
         sendPort?.send(link);
